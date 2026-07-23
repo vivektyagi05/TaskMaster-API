@@ -1,163 +1,214 @@
-# Task Manager — FastAPI CRUD Application
+<div align="center">
 
-A complete, production-quality Task Manager built with **FastAPI**, **SQLAlchemy**, and a **Vanilla JS** frontend. This project demonstrates all five HTTP methods (GET, POST, PUT, PATCH, DELETE) through a clean REST API.
+# 🚀 TaskFlow API
+
+### Production-Ready Task Management REST API built with FastAPI
+
+A modern full-stack task management application demonstrating clean REST API design, complete CRUD operations, SQLAlchemy ORM, and interactive API documentation. The project follows a modular architecture with a FastAPI backend and a lightweight Vanilla JavaScript frontend.
+
+<p>
+
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite"/>
+
+</p>
+
+<p>
+
+<img src="https://img.shields.io/badge/Status-Active-success?style=flat-square"/>
+
+<img src="https://img.shields.io/badge/API-REST-blue?style=flat-square"/>
+
+<img src="https://img.shields.io/badge/License-MIT-success?style=flat-square"/>
+
+</p>
+
+</div>
 
 ---
 
-## Project Overview
+# 📖 Overview
 
-| Layer    | Technology                       |
-|----------|----------------------------------|
-| Backend  | FastAPI, SQLAlchemy ORM, SQLite  |
-| Schemas  | Pydantic v2                      |
-| Server   | Uvicorn (ASGI)                   |
-| Frontend | HTML, CSS, Vanilla JS (Fetch API)|
-| Database | SQLite (`tasks.db`)              |
+TaskFlow API is a task management application built to demonstrate modern backend development using FastAPI. It provides a complete RESTful API with full CRUD functionality, request validation, database integration, and interactive API documentation. The frontend communicates with the backend through the Fetch API, creating a responsive and lightweight user experience.
 
 ---
 
-## Folder Structure
+# ✨ Features
 
+### 📋 Task Management
+
+- Create Tasks
+- View All Tasks
+- Update Tasks
+- Delete Tasks
+- Partial Status Updates
+
+### ⚡ REST API
+
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+
+### 🛡 Backend
+
+- FastAPI Framework
+- SQLAlchemy ORM
+- Pydantic Validation
+- Dependency Injection
+- Automatic API Documentation
+
+### 💻 Frontend
+
+- Responsive Interface
+- Vanilla JavaScript
+- Fetch API
+- Dynamic DOM Updates
+
+---
+
+# 📸 Screenshots
+
+| Task Manager | Swagger UI |
+|--------------|------------|
+| ![](docs/screenshots/home.png) | ![](docs/screenshots/swagger.png) |
+
+---
+
+# 🏗 Architecture
+
+```text
+Browser
+    │
+    ▼
+HTML + CSS + JavaScript
+    │
+    ▼
+FastAPI
+    │
+    ▼
+SQLAlchemy ORM
+    │
+    ▼
+SQLite Database
 ```
-task-manager/
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Backend | FastAPI, Python |
+| ORM | SQLAlchemy |
+| Validation | Pydantic |
+| Database | SQLite |
+| Frontend | HTML, CSS, JavaScript |
+| Server | Uvicorn |
+
+---
+
+# 📁 Project Structure
+
+```text
+TaskFlow-API/
 │
 ├── app/
-│   ├── __init__.py      # package marker
-│   ├── main.py          # FastAPI app factory, middleware, startup
-│   ├── database.py      # SQLAlchemy engine + session dependency
-│   ├── models.py        # ORM model: Task table
-│   ├── schemas.py       # Pydantic request/response models
-│   ├── crud.py          # All database operations (no SQL in routes)
-│   │
-│   └── routers/
-│       ├── __init__.py
-│       └── tasks.py     # Route handlers for every CRUD endpoint
-│
-├── templates/
-│   └── index.html       # Single-page frontend (served by Jinja2)
+│   ├── routers/
+│   ├── crud.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── main.py
 │
 ├── static/
-│   ├── style.css        # Responsive light-theme UI
-│   └── app.js           # All Fetch API calls
-│
+├── templates/
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## Requirements
-
-- Python 3.10+
-- pip
-
----
-
-## Installation & Setup
+# 🚀 Quick Start
 
 ```bash
-# 1. Clone / extract the project
-cd task-manager
+git clone <repository-url>
 
-# 2. Create and activate a virtual environment
+cd TaskFlow-API
+
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
 
-# 3. Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## How to Run
-
-```bash
-# From the task-manager/ directory (where app/ lives):
 uvicorn app.main:app --reload
 ```
 
-Then open your browser:
+Open:
 
-| URL                          | Description               |
-|------------------------------|---------------------------|
-| http://localhost:8000        | Task Manager UI           |
-| http://localhost:8000/docs   | Swagger UI (interactive)  |
-| http://localhost:8000/redoc  | ReDoc documentation       |
-| http://localhost:8000/health | Health check endpoint     |
-
-> **Note:** `tasks.db` is created automatically in the working directory on first run.
-
----
-
-## API Endpoints
-
-| Method | Path            | Description                        | HTTP Code |
-|--------|-----------------|------------------------------------|-----------|
-| POST   | `/tasks`        | Create a new task                  | 201       |
-| GET    | `/tasks`        | Get all tasks (newest first)       | 200       |
-| GET    | `/tasks/{id}`   | Get a single task by ID            | 200 / 404 |
-| PUT    | `/tasks/{id}`   | Full update (replace all fields)   | 200 / 404 |
-| PATCH  | `/tasks/{id}`   | Partial update (status only)       | 200 / 404 |
-| DELETE | `/tasks/{id}`   | Delete a task                      | 200 / 404 |
-
-### Uniform response format
-
-```json
-{
-  "success": true,
-  "message": "Task created successfully",
-  "data": {
-    "id": 1,
-    "title": "Review PR",
-    "description": "Check the authentication PR",
-    "status": "Pending",
-    "created_at": "2024-01-15T10:30:00Z"
-  }
-}
+```
+http://localhost:8000
 ```
 
-### Request body examples
+Swagger:
 
-**POST / PUT**
-```json
-{
-  "title": "Review PR",
-  "description": "Check the authentication PR",
-  "status": "Pending"
-}
+```
+http://localhost:8000/docs
 ```
 
-**PATCH**
-```json
-{ "status": "Completed" }
+ReDoc:
+
+```
+http://localhost:8000/redoc
 ```
 
 ---
 
-## Status Codes Returned
+# 📡 API Endpoints
 
-| Code | Meaning                           |
-|------|-----------------------------------|
-| 200  | OK                                |
-| 201  | Created                           |
-| 400  | Validation error (bad request)    |
-| 404  | Task not found                    |
-| 422  | Unprocessable entity (Pydantic)   |
-| 500  | Internal server / database error  |
-
----
-
-## Screenshots
-
-> _Add screenshots of the UI and Swagger docs here._
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | /tasks | Create Task |
+| GET | /tasks | Get All Tasks |
+| GET | /tasks/{id} | Get Task |
+| PUT | /tasks/{id} | Update Task |
+| PATCH | /tasks/{id} | Update Status |
+| DELETE | /tasks/{id} | Delete Task |
 
 ---
 
-## How Each CRUD Operation Works
+# 🚀 Future Improvements
 
-1. **POST /tasks** → `TaskCreate` schema validated → `crud.create_task()` inserts row → returns `TaskOut`
-2. **GET /tasks** → `crud.get_all_tasks()` queries all rows → returns list of `TaskOut`
-3. **GET /tasks/{id}** → `crud.get_task_by_id()` → 404 if missing
-4. **PUT /tasks/{id}** → `TaskUpdate` schema → `crud.update_task()` replaces all fields
-5. **PATCH /tasks/{id}** → `TaskPatch` schema (status only) → `crud.patch_task_status()`
-6. **DELETE /tasks/{id}** → `crud.delete_task()` → 404 if missing, else deletes and returns success
+- JWT Authentication
+- User Accounts
+- PostgreSQL Support
+- Docker Deployment
+- Pagination
+- Search & Filtering
+- Task Categories
+- Due Dates
+
+---
+
+# 🤝 Contributing
+
+Contributions, feature requests, and bug reports are welcome. Feel free to open an issue or submit a pull request.
+
+---
+
+# 📄 License
+
+Licensed under the MIT License.
+
+---
+
+<div align="center">
+
+Built with ❤️ using FastAPI & Python
+
+</div>
