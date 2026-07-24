@@ -78,7 +78,8 @@ TaskFlow API is a task management application built to demonstrate modern backen
 | Task Manager | Swagger UI |
 |--------------|------------|
 | ![<img width="977" height="877" alt="Screenshot 2026-07-24 224412" src="https://github.com/user-attachments/assets/97815155-69c2-4cd8-ab0a-de07a2e9bed2" />
-] | ![![Uploading image.png…]()
+] | ![<img width="1788" height="954" alt="Screenshot_24-7-2026_224951_127 0 0 1" src="https://github.com/user-attachments/assets/31d81aa8-cd27-4f45-b607-7b8b18cd7981" />
+]()
 ] |
 
 <img width="1245" height="1072" alt="Screenshot_24-7-2026_224611_127 0 0 1" src="https://github.com/user-attachments/assets/a98bf239-499c-4f5b-b93b-2394595340dd" />
