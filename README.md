@@ -73,17 +73,34 @@ TaskFlow API is a task management application built to demonstrate modern backen
 
 ---
 
-# 📸 Screenshots
+---
 
-| Task Manager | Swagger UI |
-|--------------|------------|
-| ![<img width="977" height="877" alt="Screenshot 2026-07-24 224412" src="https://github.com/user-attachments/assets/97815155-69c2-4cd8-ab0a-de07a2e9bed2" />
-] | ![<img width="1788" height="954" alt="Screenshot_24-7-2026_224951_127 0 0 1" src="https://github.com/user-attachments/assets/31d81aa8-cd27-4f45-b607-7b8b18cd7981" />
-]()
-] |
+# 📸 Application Screenshots
 
-<img width="1245" height="1072" alt="Screenshot_24-7-2026_224611_127 0 0 1" src="https://github.com/user-attachments/assets/a98bf239-499c-4f5b-b93b-2394595340dd" />
+The following screenshots demonstrate the Task Manager interface and the REST API documentation.
 
+<table align="center">
+
+<tr>
+<td align="center">
+<b>📝 Task Manager Dashboard</b><br><br>
+<img src="https://github.com/user-attachments/assets/97815155-69c2-4cd8-ab0a-de07a2e9bed2" width="450"/>
+</td>
+
+<td align="center">
+<b>📚 Swagger API Documentation</b><br><br>
+<img src="https://github.com/user-attachments/assets/31d81aa8-cd27-4f45-b607-7b8b18cd7981" width="450"/>
+</td>
+</tr>
+
+<tr>
+<td align="center" colspan="2">
+<b>🔗 API Endpoints & Testing</b><br><br>
+<img src="https://github.com/user-attachments/assets/a98bf239-499c-4f5b-b93b-2394595340dd" width="900"/>
+</td>
+</tr>
+
+</table>
 
 ---
 
