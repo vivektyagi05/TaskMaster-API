@@ -222,11 +222,6 @@ http://localhost:8000/redoc
 
 Contributions, feature requests, and bug reports are welcome. Feel free to open an issue or submit a pull request.
 
----
-
-# 📄 License
-
-Licensed under the MIT License.
 
 ---
 
